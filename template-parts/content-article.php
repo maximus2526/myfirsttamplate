@@ -4,16 +4,21 @@
             <span class="date">
                 <?php the_date(); ?>
             </span>
-            <?php 
-                the_tags('<span class="tag"><i class="fa fa-tag"></i>', '</span><span class="tag"><i class="fa fa-tag">', '</span>');
+            <?php
+            the_tags('<span class="tag"><i class="fa fa-tag"></i>', '</span><span class="tag"><i class="fa fa-tag">', '</span>');
             ?>
-            <span class="tag"><i class="fa fa-tag"></i> tag</span>
-            <span class="tag"><i class="fa fa-tag"></i> category</span>
-            <span class="comment"><a href="#comments"><i class='fa fa-comment'></i> 3 comments</a></span>
+            <span class="comment"><a href="#comments"><i class='fa fa-comment'></i>
+                    <?php comments_number(); ?></span>
         </div>
     </header>
 
     <?php
     the_content();
     ?>
+
+
+    <?php
+    comments_template();
+    ?>
+
 </div>
